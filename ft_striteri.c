@@ -6,7 +6,7 @@
 /*   By: lorbke <lorbke@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 20:27:38 by lorbke            #+#    #+#             */
-/*   Updated: 2022/04/09 20:33:26 by lorbke           ###   ########.fr       */
+/*   Updated: 2022/04/13 11:38:48 by lorbke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int		i;
 
+	if (s == NULL)
+		return ;
 	i = 0;
 	while (s[i] != 0)
 	{

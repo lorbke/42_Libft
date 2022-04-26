@@ -6,7 +6,7 @@
 /*   By: lorbke <lorbke@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 13:23:20 by lorbke            #+#    #+#             */
-/*   Updated: 2022/04/08 18:03:34 by lorbke           ###   ########.fr       */
+/*   Updated: 2022/04/13 11:35:08 by lorbke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ char	*ft_itoa(int n)
 
 	len = ft_intlen(n);
 	num = (char *)malloc(sizeof(char) * (len + 1));
+	if (num == NULL)
+		return (NULL);
 	sign = 1;
 	if (n < 0)
 		sign = -1;

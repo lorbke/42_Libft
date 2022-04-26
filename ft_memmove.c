@@ -6,7 +6,7 @@
 /*   By: lorbke <lorbke@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 21:22:28 by lorbke            #+#    #+#             */
-/*   Updated: 2022/04/05 13:10:49 by lorbke           ###   ########.fr       */
+/*   Updated: 2022/04/13 11:03:15 by lorbke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
 
+	if (dst == NULL && src == NULL && len > 0)
+		return (NULL);
 	i = 0;
 	if (dst < src)
 	{

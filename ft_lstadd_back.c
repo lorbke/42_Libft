@@ -6,7 +6,7 @@
 /*   By: lorbke <lorbke@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 12:02:16 by lorbke            #+#    #+#             */
-/*   Updated: 2022/04/11 16:38:43 by lorbke           ###   ########.fr       */
+/*   Updated: 2022/04/13 19:03:03 by lorbke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*temp;
 
-	new->next = NULL;
 	if (*lst != NULL)
 	{
 		temp = ft_lstlast(*lst);

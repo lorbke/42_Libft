@@ -6,7 +6,7 @@
 #    By: lorbke <lorbke@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 10:51:07 by lorbke            #+#    #+#              #
-#    Updated: 2022/04/12 18:05:28 by lorbke           ###   ########.fr        #
+#    Updated: 2022/04/26 13:42:50 by lorbke           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ OBJ_DIR = obj/
 OBJ_PREFX = $(addprefix $(OBJ_DIR), $(OBJ))
 OBJB_PREFX = $(addprefix $(OBJ_DIR), $(OBJB))
 
+CC = cc
 C_FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
@@ -36,7 +37,7 @@ all: $(NAME)
 $(OBJ_DIR)%.o : %.c libft.h
 	@mkdir -p $(OBJ_DIR)
 	@echo "Compiling: $<"
-	@gcc $(C_FLAGS) -c $< -o $@
+	@CC $(C_FLAGS) -c $< -o $@
 
 $(NAME): $(OBJ_PREFX)
 	@ar cr $(NAME) $(OBJ_PREFX)
@@ -50,11 +51,9 @@ fclean: clean
 
 re: fclean all
 
-test:
-	@gcc $(C_FLAGS) tests.c $(SRC) $(SRCB)
-
 bonus: $(OBJB_PREFX)
 	@ar r $(NAME) $(OBJB_PREFX)
 	@echo "Libft Bonus Done !"
 
-.PHONY: clean
+.PHONY: all clean fclean re bonus
+
