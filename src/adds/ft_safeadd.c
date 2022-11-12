@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_safeint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorbke <lorbke@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 21:05:55 by lorbke            #+#    #+#             */
-/*   Updated: 2022/04/07 21:58:17 by lorbke           ###   ########.fr       */
+/*   Created: 2022/11/06 21:53:32 by lorbke            #+#    #+#             */
+/*   Updated: 2022/11/06 22:10:18 by lorbke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+/* This function will add two given integers only 
+when there is no overflow or underflow occuring. */
+int	ft_safeadd(int a, int b)
 {
-	char	*sdup;
-	int		ssize;
-
-	ssize = ft_strlen(s1) + 1;
-	sdup = (char *)malloc(sizeof(char) * ssize);
-	if (sdup == NULL)
-		return (NULL);
-	ft_strlcpy(sdup, s1, ssize);
-	return (sdup);
+	if (a > 0 && b > INT_MAX - a)
+	{
+		errno = ERANGE;
+		return (INT_MAX);
+	}
+	else if (a < 0 && b < INT_MIN - a)
+	{
+		errno = ERANGE;
+		return (INT_MIN);
+	}
+	return (a + b);
 }
