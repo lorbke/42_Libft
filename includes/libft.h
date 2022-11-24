@@ -6,7 +6,7 @@
 /*   By: lorbke <lorbke@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 16:44:01 by lorbke            #+#    #+#             */
-/*   Updated: 2022/11/06 22:33:01 by lorbke           ###   ########.fr       */
+/*   Updated: 2022/11/24 01:00:06 by lorbke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /* functions not required initially */
+double	ft_atof(const char *str);
+int		ft_isnum(const char *str);
 int		ft_strtoi(const char *str, const char **endptr, int base);
 int		ft_isspace(int c);
 int		ft_safeadd(int a, int b);

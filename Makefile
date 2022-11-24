@@ -6,7 +6,7 @@
 #    By: lorbke <lorbke@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 16:30:49 by lorbke            #+#    #+#              #
-#    Updated: 2022/11/12 16:30:54 by lorbke           ###   ########.fr        #
+#    Updated: 2022/11/24 01:00:36 by lorbke           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ SRC = $(wildcard $(SRC_PATH)/*/*.c)
 # ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c \
 # ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 # ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_isspace.c \
-# ft_strtoi.c ft_safeadd.c ft_safemult.c \
+# ft_atof.c ft_isnum.c ft_strtoi.c ft_safeadd.c ft_safemult.c \
 # ft_printf.c ft_itoa_base.c ft_parse.c ft_printchar.c ft_printstr.c \
 # ft_vector_helper.c ft_vector.c ft_realloc_ftprintf.c
 OBJ = $(addprefix $(OBJ_PATH)/, $(addsuffix .o, $(notdir $(basename $(SRC)))))
