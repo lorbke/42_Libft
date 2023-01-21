@@ -42,7 +42,7 @@ $(SRC_PATH)/ft_vector $(SRC_PATH)/standard
 
 # file targets
 $(NAME): $(OBJ_PATH) $(OBJ)
-	@echo -e -n "$(BLUE)Library: $(RESET)"
+	@echo -e -n "$(BLUE)Creating: libft library: $(RESET)"
 	$(AR) $(NAME) $(OBJ)
 	@echo -e "$(GREEN)make: libft success!$(RESET)"
 
